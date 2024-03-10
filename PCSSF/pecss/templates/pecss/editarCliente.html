@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link rel="icon" href="images/logor.png">
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cliente.css' %}">
+    <link rel="icon"  href="{% static 'images/logor.png'%}">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo"></div>
+    <ul class="menu">
+        <!-- Otras opciones del menú -->
+    </ul>
+</div>
+    <section class="main">
+        <div class="form-register">
+            <h4>Editar Cliente</h4>
+            <form method="post" action="{% url 'actualizar_cliente' cliente.id %}">
+                {% csrf_token %}
+                <!-- Campos del formulario prellenados con los datos del cliente -->
+                <label for="tipo_documento">Tipo de Documento:</label>
+                <select class="form-control" id="tipo_documento" name="tipoDocumento" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="Cédula de ciudadanía" {% if cliente.tipoDocumento == 'Cédula de ciudadanía' %} selected {% endif %}>Cédula de ciudadanía</option>
+                    <option value="Tarjeta de identidad" {% if cliente.tipoDocumento == 'Tarjeta de identidad' %} selected {% endif %}>Tarjeta de identidad</option>
+                    <option value="Cédula de extranjería" {% if cliente.tipoDocumento == 'Cédula de extranjería' %} selected {% endif %}>Cédula de extranjería</option>
+                    <option value="Pasaporte" {% if cliente.tipoDocumento == 'Pasaporte' %} selected {% endif %}>Pasaporte</option>
+                </select><br>
+
+                <label for="numero_identificacion">Número de Identificación:</label>
+                <input class="form-control" type="text" id="numero_identificacion" placeholder="Documento" name="numeroIdentificacion" value="{{ cliente.numeroIdentificacion }}" required><br>
+
+                <label for="email">Correo Electrónico:</label>
+                <input class="form-control" type="email" placeholder="Correo Electrónico" id="email" name="email" value="{{ cliente.email }}" required><br>
+
+                <label for="nombres">Nombres:</label>
+                <input class="form-control" type="text" placeholder="Nombres" id="nombres" name="nombres" value="{{ cliente.nombres }}" required><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input class="form-control" type="text" placeholder="Apellidos" id="apellidos" name="apellidos" value="{{ cliente.apellidos }}" required><br>
+
+                <label for="telefono">Teléfono:</label>
+                <input class="form-control" type="text" placeholder="Teléfono" id="telefono" name="telefono" value="{{ cliente.telefono }}" required><br>
+
+                <label for="direecion">Dirección:</label>
+                <input class="form-control" type="text" placeholder="direecion" name="direecion" value="{{ cliente.direecion }}" required><br>
+
+                <label for="estado">Estado:</label>
+                <input class="form-control" type="text" placeholder="Estado" id="estado" name="estado" value="{{ cliente.estado }}"><br>
+
+                <button class="botons" type="submit" name="registrar">Enviar</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

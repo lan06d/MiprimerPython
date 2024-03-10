@@ -1,0 +1,267 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+margin: 0;
+padding: 0;
+border: none;
+outline: none;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+
+body{
+display: flex;
+}
+
+.sidebar{
+position: sticky;
+top: 0;
+left: 0;
+bottom: 0;
+width: 110px;
+height: 100vh;
+padding: 0 1.7rem;
+color: whitesmoke;
+overflow: hidden;
+transition: all 0.5s linear;
+background:#162938;
+}
+
+.sidebar:hover{
+width:240px;
+transition: 0.5s ;
+}
+
+.logo{
+height: 80px;
+padding: 16px;
+}
+
+.menu{
+height: 88%;
+position: relative;
+list-style:none;
+padding: 0;
+}
+
+.menu li{
+padding: 1rem;
+margin: 8px 0;
+border-radius: 8px;
+transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover, .active{
+    background: #023156d1;
+}
+
+.menu a{
+color: white;
+font-size: 14px;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 1.5rem;
+}
+
+.menu a span {
+overflow: hidden;
+}
+
+.menu a i{
+font-size: 1.2rem;
+}
+
+.logout{
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/unod.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+.navegacion a {
+    position: relative;
+    font-size: 1.1;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+
+.navegacion a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transform: transform .10s;
+
+
+}
+
+.navegacion a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+
+}
+.wrapper {
+    position: relative;
+    width: 440px;
+    height: 600px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(13, 9, 9, 0.5);
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin: 20vh auto; /* Centra verticalmente y agrega margen superior */
+}
+
+
+.wrapper .form-box {
+    width:100%;
+    padding: 40px;
+}
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translate(-30px);
+    font-size: 1em;
+    color: #edeff1;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0 35px o 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.3em;
+    color: #162938;
+    line-height: 57px;
+
+}
+.remember-forgot{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    -ms-accelerator: #162938;
+    margin-right: 3px;
+}
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25 0 10;
+
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}

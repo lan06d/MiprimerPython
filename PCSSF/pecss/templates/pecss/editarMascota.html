@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Mascota</title>
+   
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/mascota.css' %}">
+    <link rel="icon"  href="{% static 'images/logor.png'%}">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    
+    <section class="main">
+        <div class="form-register">
+            <h4>Editar Mascota</h4>
+            <form method="post" action="{% url 'actualizar_mascota' mascotas.id %}">
+                {% csrf_token %}
+                <label for="fk_ID_cliente">Cliente:</label><br>
+                <select name="fk_ID_cliente" id="fk_ID_cliente" class="controls">
+                    {% for cliente in clientes %}
+                        <option value="{{ cliente.id }}" {% if cliente.id == mascota.fk_ID_cliente.id %} selected {% endif %}>{{ cliente.numeroIdentificacion }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="nombreMascota">Nombre de la mascota:</label><br>
+                <input class="controls" type="text" id="nombreMascota" name="nombreMascota" value="{{ mascotas.nombreMascota }}" required><br>
+
+                <label for="estado">Estado de la mascota:</label><br>
+                <input class="controls" type="text" id="estado" name="estado" value="{{ mascotas.estado }}" required><br>
+
+                <label for="raza">Raza:</label><br>
+                <input class="controls" type="text" id="raza" name="raza" value="{{ mascotas.raza }}" required><br>
+
+                <label for="edad">Edad:</label><br>
+                <input class="controls" type="text" id="edad" name="edad" value="{{ mascotas.edad }}"><br>
+
+                <label for="observacion">Observación:</label><br>
+                <textarea class="controls" id="observacion" name="observacion">{{ mascotas.observacion }}</textarea><br>
+
+                <input class="botons" type="submit" name="editar" value="Guardar Cambios">
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>

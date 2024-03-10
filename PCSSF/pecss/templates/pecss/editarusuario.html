@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Editar Usuario</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/cita.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cita.css' %}">
+    <link rel="icon"  href="{% static 'images/logor.png'%}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="{% url 'ingreso_Admin' %}">
+                    <i class='bx bxs-objects-horizontal-left'></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="active">
+              <a href="{% url 'formulario_Registro' %}">
+                  <i class='bx bxs-objects-horizontal-left'></i>
+                  <span>Registro</span>
+              </a>
+          </li>
+            <li>
+                <a href="{% url 'formulario_Cliente' %}">
+                    <i class="bx bxs-user"></i>
+                    <span>Cliente</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'formulario_Mascota' %}">
+                    <i class='bx bxs-dog'></i>
+                    <span>Mascota</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'formulario_Servicio' %}">
+                    <i class='bx bxs-comment-dots'></i>
+                    <span>Citas</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'inicio' %}">
+                    <i class="bx bxs-log-out"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="form-register">
+            
+        <h1>Editar Usuario</h1>
+        <form name="form_usuario" method="POST" action="{% url 'actualizar_usuario' usuario.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <label for="rol" class="form-label">Rol:</label>
+                <input type="text" name="rol" class="controls" value="{{ usuario.rol }}" required>
+            </div>
+            <div class="row">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" name="email" class="controls" value="{{ usuario.email }}" required>
+            </div>
+            <div class="row">
+                <label for="clave" class="form-label">Clave:</label>
+                <input type="password" name="clave" class="controls" value="{{ usuario.clave }}" required>
+            </div>
+            <div class="row">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input type="text" name="telefono" class="controls" value="{{ usuario.telefono }}">
+            </div>
+            <div class="row">
+                <label for="nombres" class="form-label">Nombres:</label>
+                <input type="text" name="nombres" class="controls" value="{{ usuario.nombres }}" required>
+            </div>
+            <div class="row">
+                <label for="apellidos" class="form-label">Apellidos:</label>
+                <input type="text" name="apellidos" class="controls" value="{{ usuario.apellidos }}" required>
+            </div>
+            <div class="row">
+                <label for="tipoDocumento" class="form-label">Tipo de Documento:</label>
+                <input type="text" name="tipoDocumento" class="controls" value="{{ usuario.tipoDocumento }}" required>
+            </div>
+            <div class="row">
+                <label for="numDocumento" class="form-label">Número de Documento:</label>
+                <input type="number" name="numDocumento" class="controls" value="{{ usuario.numDocumento }}" required>
+            </div>
+            <div class="row">
+                <label for="direccion" class="form-label">Dirección:</label>
+                <input type="text" name="direccion" class="controls" value="{{ usuario.direccion }}" required>
+            </div>
+            <div class="row">
+                <label for="estado" class="form-label">Estado:</label>
+                <input type="text" name="estado" class="controls" value="{{ usuario.estado }}" required>
+            </div>
+            <div class="row">
+                <input type="submit" name="editar" class="botons" value="Guardar Cambios">
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

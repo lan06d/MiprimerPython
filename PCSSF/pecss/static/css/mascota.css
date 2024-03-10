@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+margin: 0;
+padding: 0;
+border: none;
+outline: none;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+
+body{
+display: flex;
+}
+
+.sidebar{
+position: sticky;
+top: 0;
+left: 0;
+bottom: 0;
+width: 110px;
+height: 100vh;
+padding: 0 1.7rem;
+color: whitesmoke;
+overflow: hidden;
+transition: all 0.5s linear;
+background:#162938;
+}
+
+.sidebar:hover{
+width:240px;
+transition: 0.5s ;
+}
+
+.logo{
+height: 80px;
+padding: 16px;
+}
+
+.menu{
+height: 88%;
+position: relative;
+list-style:none;
+padding: 0;
+}
+
+.menu li{
+padding: 1rem;
+margin: 8px 0;
+border-radius: 8px;
+transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover, .active{
+    background: #023156d1;
+}
+
+.menu a{
+color: white;
+font-size: 14px;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 1.5rem;
+}
+
+.menu a span {
+overflow: hidden;
+}
+
+.menu a i{
+font-size: 1.2rem;
+}
+
+.logout{
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+}
+
+
+/**Tabla*/
+
+.container-table{
+
+background: rgb(217, 217, 217);
+margin: 50px auto;
+box-shadow: 0 0 20px #333;
+display: grid;
+grid-template-rows: repeat(7, 1fr);
+grid-auto-rows: 50px;
+position: relative;
+margin-top: 50px;
+
+}
+
+.table__title{
+grid-column-start: 1;
+grid-column-end: 4;
+background: #162938;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+font-size: 1.9em;
+}
+
+.table__header, .table__item {
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.table__header{
+font-weight: bold;
+font-size: 1.5em;
+}
+
+.table__item{
+padding: 10px;
+font-size: 1.2em;
+}
+.table__item:hover{
+background-color: rgb(134, 134, 139);
+}
+
+.table__header:hover{
+background-color:rgb(186, 183, 183);
+
+}
+
+/**Formulario*/
+
+.form-register{
+width: 500px;
+background: transparent;
+padding: 30px;
+margin: auto;
+margin-top: 50px;
+border-radius: 20px;
+font-family: 'Poppins', sans-serif;
+color:#162938;
+box-shadow: 7px 13px 37px #162938;
+position: relative;
+    
+}
+
+.form-register h4 {
+font-size: 22px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.controls{
+width: 100%;
+background: #f6f6f7ad;
+padding: 10px;
+border-radius: 4px;
+margin-bottom: 16px;
+border: 1px solid #162938;
+font-family:'Poppins', sans-serif;
+font-size: 18px;
+color:#162938;
+}
+
+.form-register p {
+height: 40px;
+text-align: center;
+font-size: 18px;
+}
+
+.form-register a{
+color: #302626;
+text-decoration: none;
+}
+
+.form-register a:hover{
+color: #162938;
+text-decoration: underline;
+}
+
+.form-register .botons{
+width: 100%;
+background: #162938;
+border: none;
+padding: 12px;
+color: #fff;
+margin: 16px 0;
+font-size: 16px;
+border-radius: 10px;
+
+}
+.form-register .botons:hover{
+background-color:#023156d1;
+
+}
+
+.form-register label{
+font-size: 18px;
+
+}
+
+.main{
+position: relative;
+background: rgb(255, 255, 255);
+width: 100%;
+
+}
+.main .container-table{
+margin-left: 35px;
+margin-right: 35px;
+}
+
+
+
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    
+    <link rel="stylesheet" href="css/cita.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cita.css' %}">
+    <link rel="icon"  href="{% static 'images/logor.png'%}">
+
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo"></div>
+    <ul class="menu">
+        <li class="">
+            <a href="{% url 'ingreso_Admin' %}">
+                <i class='bx bxs-objects-horizontal-left'></i>
+                <span>Inicio</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'formulario_Registro' %}">
+                <i class='bx bxs-objects-horizontal-left'></i>
+                <span>Registro</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'formulario_Cliente' %}">
+                <i class="bx bxs-user"></i>
+                <span>Cliente</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'formulario_Mascota' %}">
+                <i class='bx bxs-dog'></i>
+                <span>Mascota</span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="{% url 'formulario_Servicio' %}">
+                <i class='bx bxs-comment-dots'></i>
+                <span>Servicios</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'inicio' %}">
+                <i class="bx bxs-log-out"></i>
+                <span>Cerrar sesión</span>
+            </a>
+        </li>
+    </ul>
+</div>
+    <section class="main">
+        <div class="form-register">
+            <h4>Servicio</h4>
+            <form method="post" action = "{% url 'registrar_servicio' %}">
+                {% csrf_token %}
+                <!-- Campos del formulario para la tabla de Citas -->
+                
+                <label for="fk_ID_usuario">Quien reliza el servicio:</label><br>
+                <label for="fk_ID_usuario"></label>
+                <select type="" name="fk_ID_usuario" id="fk_ID_usuario"  class="controls">
+                    <option value="#">Seleccionar</option>
+
+                    {% for usuario in usuarios %}
+                    <option value="{{ usuario.id }}" > {{ usuario.nombres }} </option>
+                    {%endfor%}
+                </select>
+                <label for="fk_ID_mascota">Mascota:</label><br>
+                <label for="fk_ID_mascota"></label>
+                <select type="" name="fk_ID_mascota" id="fk_ID_mascota"  class="controls">
+                    <option value="#">Seleccionar</option>
+
+                    {% for mascota in mascotas %}
+                    <option value="{{ mascota.id }}" > {{ mascota.nombreMascota }} </option>
+                    {%endfor%}
+                </select>
+                <label for="fk_id_tipo_servicio">Tipo servicio:</label><br>
+                <label for="fk_id_tipo_servicio"></label>
+                <select type="" name="fk_id_tipo_servicio" id="fk_id_tipo_servicio"  class="controls">
+                    <option value="#">Seleccionar</option>
+
+                    {% for tipoServicio in tipoServicio %}
+                    <option value="{{ tipoServicio.id }}" > {{ tipoServicio.tipo_servicio }} </option>
+                    {%endfor%}
+                </select>
+
+                <label for="fecha">Fecha de Cita:</label><br>
+                <input class="controls" type="date" id="fecha" name="fecha" required><br>
+
+                <label for="hora">Hora de Cita:</label><br>
+                <input class="controls" type="time" id="hora" name="hora" required><br>
+
+                <label for="observacion">Observación:</label><br>
+                <textarea class="controls" id="observacion" placeholder="observacion" name="observacion"></textarea><br>
+
+
+                <label for="estado">Estado:</label><br>
+                <input class="controls" type="text" placeholder="estado" id="estado" name="estado"><br><br>
+
+                <input class="botons" type="submit" name="registrar" value="Enviar">
+            </form>
+        </div>
+        
+    </section>
+</body>
+</html>

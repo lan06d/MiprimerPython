@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: initial;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color:whitesmoke;
+}
+
+header {
+    background-color: #db0b0b;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    width: 101%;
+    height: 650px;
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(176, 68%, 74%, 0.594), hsla(219, 67%, 72%, 0.639), #7F7FD5), url(../images/tresd.jpg); 
+     /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(176, 68%, 74%, 0.594), hsla(219, 67%, 72%, 0.639), #7F7FD5), url(../images/tresd.jpg); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1100px;
+    margin: 0  auto;
+
+}
+
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.menu .Logo {
+    font-weight: 700;
+    font-size: 25px;
+    color: #ffffff;
+    
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 8px 25px;
+    border-radius: 25px;
+    color:rgb(255, 255, 255);
+    display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color:rgb(173, 198, 235);
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label  {
+    cursor: pointer;
+    display: none;
+}
+.header-content {
+    display: flex;
+}
+
+a.active, a:hover {
+    
+    transition: .5s;
+}
+
+.content {
+    padding: 100px 150px 0px 0px;
+}
+
+.content h1 {
+    color: #f8f8f8;
+    font-size: 75px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 70px;
+    
+}
+/* nosotros*/
+
+
+
+.titulo{
+    text-align: center;
+    margin: 50px;
+}
+
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+.imagen-about-us{
+    width: 40%;
+}
+.contenedor-sobre-nosotros .contenido-textos{
+    width: 48%;
+
+
+}
+.contenido-textos h3 {
+    margin-bottom: 15px;
+}
+.contenido-textos h2 span{
+    background: hsla(288, 49%, 70%, 0.537);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 40px;
+    box-shadow: 0 0 6px rgba(116, 154, 153, 0.5);
+    
+}
+.contenido-textos p{
+    padding:0px 0px 30px 15px ;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/*galeria */
+/*final*/
+
+
+
+
+.footer {
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(176, 68%, 74%, 0.594), hsla(219, 67%, 72%, 0.639), #7F7FD5); 
+     /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(176, 68%, 74%, 0.594), hsla(219, 67%, 72%, 0.639), #7F7FD5), ; 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 50px 0;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-links {
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-links h4 {
+    font-size: 20px;
+    color: azure;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color:beige;
+    display:block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+.footer-links ul li a:hover {
+    color: #ffffff;
+    padding-left: 6px;
+
+}
+.social-link a {
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all .5s ease;
+}
+
+.social-link a:hover {
+    background-color: rgb(25, 68, 148);
+}
+
+
+
+
+
+/*adactacion*/
+@media screen and (max-whidt:9000px){
+    header{
+        background-position: center;
+    }
+    
+}
+@media (max-width:991px) {
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgb(203, 177, 241);
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    header {
+        height: 0vh;
+        padding: 400px 0px;
+        background-position: center center;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 0px 30px;
+    }
+
+    a.active, a:hover {
+        background: none;
+        color: rgb(50, 155, 173);
+        text-shadow: 0 10px 15px rgb(21, 58, 219);
+    }
+    
+    
+    
+    
+
+    
+    .content p {
+        margin-top: 0px;
+    }
+
+    .header-content img {
+        width: 150px;
+    }
+    .content {
+        padding: 0px;
+    }
+    .content h1 {
+        margin-top: 100px;
+        font-size: 45px;
+    }
+
+    .content p {
+        margin-top: 0px;
+    }
+    .header-content img {
+        width: 150px;
+    }
+
+    .services {
+        flex-direction: column;
+        padding: 50px 30px 0px 30px;
+    }
+
+    .service {
+        margin-bottom: 50px;
+    }
+
+    .porfolios {
+        padding: 0px 30px 30px 30px;
+    }
+
+    .porfolios h2 {
+        margin-bottom: 15px;
+    }
+    .porfolio {
+        flex-direction: column;
+    }
+    .porfolio img {
+        display: none;
+    }
+
+    .porfolio-1 {
+        text-align: center;
+        margin: 0px 0px 25px 0px;
+    }
+    .porfolio-2 {
+        text-align: center;
+        margin: 0px 0px 25px 0px;
+    }
+    .porfolio-3 {
+        text-align: center;
+        margin: 0px 0px 25px 0px;
+    }
+
+    .footer-row {
+        text-align: center;
+    }
+    .footer-links {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+

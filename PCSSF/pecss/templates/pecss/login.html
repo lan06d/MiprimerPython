@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="icon" href="/static/simage/logor.png">
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+
+{{error}}
+
+
+<body>
+    
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Formulario</h2>
+            <form id="login-form" action="{% url 'linicio' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-box">
+                    <label for="id_username">Username:</label>
+                    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" required id="id_username">
+                </div>
+
+                <div class="input-box">
+                    <label for="id_password">Password:</label>
+                    <input type="password" name="password" autocomplete="current-password" required id="id_password">
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox" name="remember"> Recordarme</label>
+                    <a href="/ingreso_Admin">¿Olvidaste la contraseña?</a>
+                </div>
+                <button type="submit" class="btn" name="enviar_formulario" id="enviar">Sign In</button>
+                
+            </form>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+    <script  type="module"  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script  nomodule  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Servicio</title>
+    
+    <link rel="stylesheet" href="css/cita.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cita.css' %}">
+    <link rel="icon"  href="{% static 'images/logor.png'%}">
+
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo"></div>
+    <ul class="menu">
+        <!-- Opciones del menú -->
+    </ul>
+</div>
+    <section class="main">
+        <div class="form-register">
+            <h4>Editar Servicio</h4>
+            <form method="post" action="{% url 'actualizar_servicio' servicios.id %}">
+                {% csrf_token %}
+                <!-- Campos del formulario para editar el servicio -->
+                <label for="fk_ID_usuario">Quien realiza el servicio:</label><br>
+                <select name="fk_ID_usuario" id="fk_ID_usuario" class="controls">
+                    {% for usuario in usuarios %}
+                        <option value="{{ usuario.id }}" {% if usuario.id == servicios.fk_ID_usuario.id %} selected {% endif %}>{{ usuario.nombres }}</option>
+                    {% endfor %}
+                </select><br>
+                
+                <label for="fk_ID_mascota">Mascota:</label><br>
+                <select name="fk_ID_mascota" id="fk_ID_mascota" class="controls">
+                    {% for mascota in mascotas %}
+                        <option value="{{ mascota.id }}" {% if mascota.id == servicios.fk_ID_mascota.id %} selected {% endif %}>{{ mascota.nombreMascota }}</option>
+                    {% endfor %}
+                </select><br>
+                
+                <label for="fk_id_tipo_servicio">Tipo de servicio:</label><br>
+                <select name="fk_id_tipo_servicio" id="fk_id_tipo_servicio" class="controls">
+                    {% for tipoServicio in tipoServicios %}
+                        <option value="{{ tipoServicio.id }}" {% if tipoServicio.id == servicios.fk_id_tipo_servicio.id %} selected {% endif %}>{{ tipoServicio.tipo_servicio }}</option>
+                    {% endfor %}
+                </select><br>
+
+
+                <label for="fecha">Fecha de Servicio:</label><br>
+                <input class="controls" type="date" id="fecha" name="fecha" value={{ fechas }} ><br>
+
+                <label for="hora">Hora de Servicio:</label><br>
+                <input class="controls" type="time" id="hora" name="hora" value={{ horas }}><br>
+
+                <label for="observacion">Observación:</label><br>
+                <textarea class="controls" id="observacion" name="observacion" required>{{ servicios.observacion }}</textarea><br>
+
+                <label for="estado">Estado:</label><br>
+                <input class="controls" type="text" id="estado" name="estado" value="{{ servicios.estado }}" required><br>
+
+                <input class="botons" type="submit" name="editar" value="Guardar Cambios">
+            </form>
+        </div>
+        
+    </section>
+</body>
+</html>

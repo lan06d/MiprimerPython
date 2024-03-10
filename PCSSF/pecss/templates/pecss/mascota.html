@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Mascotas</title>
+    <link rel="icon" href="images/logor.png">
+    <link rel="stylesheet" href="css/mascota.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/mascota.css' %}">
+    <link rel="icon"  href="{% static 'images/logor.png'%}">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="">
+                <a href="{% url 'ingreso_Admin' %}">
+                    <i class='bx bxs-objects-horizontal-left'></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{% url 'formulario_Registro' %}">
+                    <i class='bx bxs-objects-horizontal-left'></i>
+                    <span>Registro</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'formulario_Cliente' %}">
+                    <i class="bx bxs-user"></i>
+                    <span>Cliente</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="{% url 'formulario_Mascota' %}">
+                    <i class='bx bxs-dog'></i>
+                    <span>Mascota</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'formulario_Servicio' %}">
+                    <i class='bx bxs-comment-dots'></i>
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'inicio' %}">
+                    <i class="bx bxs-log-out"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="main">
+        <div class="form-register">
+            <h4>Registro de Mascota</h4>
+            <form method="post" action = "{% url 'registrar_mascota' %}">
+
+                {% csrf_token %}
+                <label for="fk_ID_cliente">Cliente:</label><br>
+                <label for="fk_ID_cliente"></label>
+                <select type="" name="fk_ID_cliente" id="fk_ID_cliente" class="controls">
+                    <option value="#">Seleccionar</option>
+
+                    {% for cliente in clientes %}
+                    <option value="{{ cliente.id }}" > {{ cliente.numeroIdentificacion }} </option>
+                    {%endfor%}
+                </select>
+
+                <label for="nombreMascota" >Nomre mascota</label><br>
+                <input class="controls" type="text" placeholder="nombreMascota" id="nombreMascota" name="nombreMascota" required><br>
+
+
+                <label for="estado">Estado de la mascota:</label><br>
+                <input class="controls" type="text" placeholder="Estado" id="estado" name="estado" required><br>
+
+                <label for="raza">Raza:</label><br>
+                <input class="controls" type="text" placeholder="Raza" id="raza" name="raza" required><br>
+
+                <label for="edad">Edad:</label><br>
+                <input class="controls" type="text" placeholder="Edad" id="edad" name="edad"><br>
+
+                <label for="observacion">Observación:</label><br>
+                <textarea class="controls" id="observacion" placeholder="Observación" name="observacion"></textarea><br>
+
+                <input class="botons" type="submit" name="registrar" value="Enviar">
+            </form>
+        </div>
+        
+    </section>
+    
+</body>
+</html>
